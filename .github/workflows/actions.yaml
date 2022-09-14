@@ -21,6 +21,7 @@ jobs:
           cd django_api
           virtualenv venv
           source venv/bin/activate
+          pip install -r requirements.txt
           python manage.py makemigrations
           python manage.py makemigrations $CI_PROJECT_NAME
           python manage.py migrate
