@@ -14,7 +14,7 @@ jobs:
           path: django_api
       - name: install dependencies
         run: |
-          apt-get install python3-pip
+          sudo apt-get install python3-pip
           pip3 install virtualenv
       - name: run migrations
         run: |
