@@ -13,9 +13,7 @@ jobs:
         with:
           path: django_api
       - name: install dependencies
-        run: |
-          sudo apt-get install python3-pip
-          pip3 install virtualenv
+        run: pip3 install virtualenv
       - uses: actions/setup-python@v2
         with:
           python-version: '3.8'
