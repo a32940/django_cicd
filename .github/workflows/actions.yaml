@@ -1,0 +1,26 @@
+name: mule composite
+on:
+  push:
+    branches:
+      # - master/*
+      - main
+jobs:
+  migrations:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout local repo
+        uses: actions/checkout@v3
+      - name: run migrations
+        run: |
+          python -v
+#          python3 manage.py makemigrations
+#          python3 manage.py makemigrations $CI_PROJECT_NAME
+#          python3 manage.py migrate
+#          python3 manage.py migrate $CI_PROJECT_NAME
+#          python3 manage.py check
+
+#  django-test:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: test django
+#        run: python3 manage.py test
