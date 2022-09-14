@@ -29,6 +29,5 @@ jobs:
           python manage.py check
       - name: test django
         run: |
-          ls
-#          cd djando_api
-#          python manage.py test # xe
+          cd django_api
+          python manage.py test # xe
