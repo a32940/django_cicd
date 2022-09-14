@@ -20,7 +20,7 @@ jobs:
         with:
           python-version: '3.8'
           cache: 'pip'
-      - name: run migrations
+      - name: run migrations # asdasd
         run: |
           cd django_api
           virtualenv venv
