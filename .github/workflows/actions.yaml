@@ -10,14 +10,22 @@ jobs:
     steps:
       - name: checkout local repo
         uses: actions/checkout@v3
+        with:
+          path: django_api
+      - name: install dependencies
+        run: |
+          apt-get install python3-pip
+          pip3 install virtualenv
       - name: run migrations
         run: |
-          python -v
-#          python3 manage.py makemigrations
-#          python3 manage.py makemigrations $CI_PROJECT_NAME
-#          python3 manage.py migrate
-#          python3 manage.py migrate $CI_PROJECT_NAME
-#          python3 manage.py check
+          cd django_api
+          virtualenv venv
+          source venv/bin/activate
+          python manage.py makemigrations
+          python manage.py makemigrations $CI_PROJECT_NAME
+          python manage.py migrate
+          python manage.py migrate $CI_PROJECT_NAME
+          python manage.py check
 
 #  django-test:
 #    runs-on: ubuntu-latest
